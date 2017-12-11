@@ -3,14 +3,25 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
+    <style>
+    body{
+        overflow: hidden;
+    }
+    </style>
 </head>
 <body>
-
-<canvas id="mycanvas" width="2000" height="2000"></canvas>
 <script>
-    var mycanvas = document.getElementById("mycanvas");
-    //获取canvas
+   
+</script>
 
+<!-- <canvas id="mycanvas" ></canvas> -->
+<script>
+var canvas = "<canvas id='myCanvas' width='" + screen.availWidth + "px' height='"+ screen.availHeight + "px'></vanvas>";
+document.body.insertAdjacentHTML("beforeEnd", canvas);
+
+window.onload=function(){ 
+    var mycanvas = document.getElementById("myCanvas")
+    
     var ctx = mycanvas.getContext("2d");//绘制canvass
 
     //圆形类
@@ -71,6 +82,8 @@
             circleArr[i].update() && circleArr[i].render();
         };
     },1000/60);
+} 
+    
 
 </script>
 </body>
